@@ -1,1 +1,11 @@
-module.exports = "It works from content.js.";
+import React from 'react'
+import { render } from 'react-dom'
+
+const rootElement = document.getElementById('root')
+
+render(
+    <div>
+      In Sync
+    </div>,
+    rootElement
+)

@@ -40,4 +40,9 @@ Update package.json
 
 # Integrating React
 
+1. Update package.json with necessary react dependencies
+2. Update content.js
+3. Update webpack config
+4. create .bablerc
+
 #Cleaning up
