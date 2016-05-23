@@ -32,6 +32,11 @@ Step 4: Introduce webpack.config.js
 
 run `npm run webpack`
 
+Step 5: Configure webpack-dev-server
+
+run `npm install webpack-dev-server --save-dev`
+
+Update package.json
 
 # Integrating React
 
