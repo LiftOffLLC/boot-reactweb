@@ -10,18 +10,28 @@ open index.html in browser.
 
 Step 2:
 
-Create file content.js
-Update entry.js
+1. Create file content.js
+2. Update entry.js
 
 run `npm webpack`
 
 Step 3: Introducing Style
-Create style.css
-Update entry.css
+
+1. Create style.css
+2. Update entry.css
 
 run `npm install css-loader style-loader --save-dev`
 
 run `npm run webpack`
+
+Step 4: Introduce webpack.config.js
+
+1. Add webpack.config.js
+2. remove style pre processor from entry.js
+3. Update package.json
+
+run `npm run webpack`
+
 
 # Integrating React
 

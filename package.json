@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "webpack": "webpack ./entry.js bundle.js"
+    "webpack": "webpack"
   },
   "author": "",
   "license": "ISC",
