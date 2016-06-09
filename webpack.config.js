@@ -2,6 +2,7 @@ var path = require('path')
 
 module.exports = {
   entry: "./entry.js",
+  devtool: 'cheap-module-source-map',
   output: {
     path: path.join(__dirname, 'dist'),
     filename: "bundle.js",
