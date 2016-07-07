@@ -1,4 +1,10 @@
 const User = require('../models/user');
+const jwt = require('jwt-simple');
+const config = require('../config/config');
+
+function tokenForUser(user) {
+  return jwt.encode({sub : user.id}, config.secret)
+}
 
 exports.signup = function (req, res, next) {
 
@@ -29,7 +35,8 @@ exports.signup = function (req, res, next) {
       if(err) { return next(err); }
 
       if(user) {
-        res.json(user);
+        const token = tokenForUser(user);
+        res.json({token});
       }
     })
 
