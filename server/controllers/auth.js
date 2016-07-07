@@ -3,11 +3,11 @@ const jwt = require('jwt-simple');
 const config = require('../config/config');
 
 function tokenForUser(user) {
-  return jwt.encode({sub : user.id}, config.secret)
+  const timestamp = new Date().getTime();
+  return jwt.encode({sub : user.id, iat: timestamp}, config.secret)
 }
 
 exports.signup = function (req, res, next) {
-
   const email = req.body.email;
   const password = req.body.password;
 
@@ -30,7 +30,7 @@ exports.signup = function (req, res, next) {
       password
     });
 
-    // respond with the new user detail
+    //respond with the new user detail
     newUser.save(function (err, user) {
       if(err) { return next(err); }
 
@@ -41,5 +41,9 @@ exports.signup = function (req, res, next) {
     })
 
   })
+};
 
-}
+exports.signin = function (req, res, next) {
+  const token = tokenForUser(req.user);
+  res.send({token});
+};

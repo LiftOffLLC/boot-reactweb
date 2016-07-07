@@ -4,4 +4,4 @@ bundle.js
 *.log
 *.map
 .idea
-config/config.js
+server/config/config.js
