@@ -1,10 +1,17 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import ContactList from './ContactList'
-const App = (contacts) => (
-  <div>
-    <ContactList />
-  </div>
-)
+import React, { Component } from 'react'
+import Header from './Header'
+
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <Header />
+        {this.props.children}
+      </div>
+    )
+  }
+}
+
+
 
 export default App

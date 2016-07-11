@@ -5,6 +5,8 @@ import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import contactApp from './reducers'
 import App from './components/App'
+import {Router, Route, IndexRoute, browserHistory } from 'react-router'
+import Signin from './components/auth/Signin'
 
 let store = createStore(contactApp, applyMiddleware(
   thunkMiddleware
@@ -12,7 +14,11 @@ let store = createStore(contactApp, applyMiddleware(
 
 render(
   <Provider store={store}>
-    <App />
+    <Router history={browserHistory}>
+      <Route path="/" component={App}>
+        <Route path="signin" component={Signin}></Route>
+      </Route>
+    </Router>
   </Provider>,
   document.getElementById('root')
 )

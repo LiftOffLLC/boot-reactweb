@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux'
 import contacts from './contacts'
+import { reducer } from 'redux-form'
 
 const contactApp = combineReducers({
-  contacts
+  contacts,
+  form : reducer
 })
 
 export default contactApp
