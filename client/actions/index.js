@@ -1,4 +1,6 @@
 export const RECEIVE_CONTACTS = 'RECEIVE_CONTACTS'
+import { browserHistory } from 'react-router'
+import { AUTH_USER } from  './types'
 
 function receiveContacts(json) {
   return {
@@ -54,7 +56,6 @@ export function addContact(contact) {
 const ROOT_URL = 'http:/localhost:3000'
 
 export function signinUser({email, password}) {
-  console.log({email, password})
   //submit email password to server
   return function (dispatch) {
     return fetch('/signin', {
@@ -69,18 +70,21 @@ export function signinUser({email, password}) {
       })
     })
       .then(response => {
-        console.log("yooo111")
-        /*response.json()
+        response.json()
           .then(json => {
-            console.log(json)
-          })*/
+            dispatch({type: AUTH_USER})
+            localStorage.setItem('token', json.token)
+            browserHistory.push('contact-list')
+          })
       })
-  }
-  //if result is good ,
-  //update state
-  //save jwt
-  //redirect to feature
+      .catch(() => {
+        console.log("bad password")
+        //if result is bad
+        // show error to user
+      })
 
-  //if result is bad
-  // show error to user
+  }
+
+
+
 }

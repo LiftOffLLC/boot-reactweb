@@ -23,6 +23,7 @@
     "webpack-node-externals": "^1.2.0"
   },
   "dependencies": {
+    "babel-preset-stage-2": "^6.11.0",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.15.2",
     "dotenv": "^2.0.0",
