@@ -23,6 +23,7 @@
     "webpack-node-externals": "^1.2.0"
   },
   "dependencies": {
+    "axios": "^0.13.1",
     "babel-preset-stage-2": "^6.11.0",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.15.2",
