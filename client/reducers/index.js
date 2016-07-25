@@ -3,10 +3,10 @@ import contacts from './contacts'
 import { reducer as form} from 'redux-form'
 import auth from './auth'
 
-const contactApp = combineReducers({
+const myApp = combineReducers({
   contacts,
   form,
   auth
 })
 
-export default contactApp
+export default myApp

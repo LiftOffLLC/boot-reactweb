@@ -3,7 +3,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-import contactApp from './reducers';
+import myApp from './reducers';
 import App from './components/App';
 import {Router, Route, IndexRoute, browserHistory } from 'react-router';
 import Signin from './components/auth/Signin';
@@ -12,10 +12,18 @@ import Signup from './components/auth/Signup';
 import ContactList from './components/ContactList';
 import requireAuth from './components/auth/require_auth';
 import Welcome from './components/welcome';
+import { AUTH_USER } from './actions/types';
 
-let store = createStore(contactApp, applyMiddleware(
+let store = createStore(myApp, applyMiddleware(
   thunkMiddleware
 ));
+
+const token = localStorage.getItem('token');
+//If we have a token, consider the user to be signed in
+if(token) {
+  //we need to update the application state
+  store.dispatch({ type : AUTH_USER});
+}
 
 render(
   <Provider store={store}>
