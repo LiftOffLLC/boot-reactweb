@@ -11,6 +11,7 @@ import Signout from './components/auth/Signout';
 import Signup from './components/auth/Signup';
 import ContactList from './components/ContactList';
 import requireAuth from './components/auth/require_auth';
+import Welcome from './components/welcome';
 
 let store = createStore(contactApp, applyMiddleware(
   thunkMiddleware
@@ -20,6 +21,7 @@ render(
   <Provider store={store}>
     <Router history={browserHistory}>
       <Route path="/" component={App}>
+        <IndexRoute component={Welcome} />
         <Route path="signin" component={Signin}></Route>
         <Route path="signup" component={Signup}></Route>
         <Route path="signout" component={Signout}></Route>
