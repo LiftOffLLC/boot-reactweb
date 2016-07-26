@@ -14,7 +14,7 @@ form {
   font-size: 18px;
   line-height: 20px; }
 
-.landing-msg {
+.landing-msg, .signout-msg {
   background: #eee;
   width: 100%;
   margin: auto;
