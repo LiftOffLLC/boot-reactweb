@@ -5,7 +5,7 @@ form {
 }
 
 .error {
-  color: red;  
+  color: red;
 }
 
 .main-nav {
@@ -42,4 +42,30 @@ form {
 
 .form-footer {
   text-align: right;
+}
+
+.contact-list {
+  list-style: none;
+  margin: 0;
+  padding: 15px;
+  border: 1px solid $light-grey;
+  border-radius: 0 0 4px 4px;
+  max-height: 400px;
+  overflow: auto;
+  >li {
+    background: $light-grey;
+    padding: 15px;
+    margin-bottom: 15px;
+    font-weight: 600;
+  }
+}
+
+.contact-list-heading {
+  margin: 50px 0 0 0;
+  border: 1px solid $light-grey;
+  padding: 15px;
+  font-weight: 400;
+  border-bottom: 0;
+  border-radius: 4px 4px 0 0;
+  background: lighten($light-grey,3%);
 }

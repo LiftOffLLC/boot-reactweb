@@ -17,8 +17,10 @@ class AddContact extends React.Component{
         </div>
         <div className="panel-body">
           <form onSubmit={this.addContact.bind(this)}>
-            <input ref='contact' type="text" placeholder="Add a contact"/>
-            <button type="submit">Save</button>
+            <div className="col-md-4">
+              <input ref='contact' type="text" placeholder="Add a contact" className="form-control"/>
+            </div>
+            <button type="submit" className="btn btn-primary">Save</button>
           </form>
         </div>
       </div>

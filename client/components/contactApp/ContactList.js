@@ -14,8 +14,8 @@ class ContactList extends React.Component{
     return (
       <div>
         <AddContact />
-        <h3> Contacts</h3>
-        <ul>
+        <h3 className="contact-list-heading"> Contacts</h3>
+        <ul className="contact-list">
           {this.props.contacts.map(contact =>
             <Contact
               key={contact._id}
