@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { fetchContacts } from '../../actions/contactApp';
 
-import Contact from './Contact';
+import Contact from './contact';
 import AddContact from './AddContact';
 
 class ContactList extends React.Component{
