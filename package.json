@@ -8,7 +8,7 @@
     "npm": "3.5.3"
   },
   "scripts": {
-    "dev": "webpack --watch & node start.js",
+    "dev": "webpack-dev-server --inline --content-base build/",
     "prod": "webpack -p & node start.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -47,6 +47,7 @@
     "sass-loader": "4.0.0",
     "style-loader": "0.13.1",
     "url-loader": "0.5.7",
-    "webpack": "2.1.0-beta.15"
+    "webpack": "2.1.0-beta.15",
+    "webpack-dev-server": "1.14.1"
   }
 }
