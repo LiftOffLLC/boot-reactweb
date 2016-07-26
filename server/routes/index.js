@@ -15,7 +15,7 @@ module.exports = function(express, opts) {
   router.post('/signup', Authentication.signup);
   router.post('/signin', requireSignin, Authentication.signin);
 
-  router.get('/contacts', controllers.index);
-  router.post('/contacts', controllers.addContact);
+  router.get('/contacts', requireAuth, controllers.index);
+  router.post('/contacts', requireAuth, controllers.addContact);
   return router;
 };

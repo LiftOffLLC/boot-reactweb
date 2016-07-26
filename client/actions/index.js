@@ -1,7 +1,8 @@
-export const RECEIVE_CONTACTS = 'RECEIVE_CONTACTS';
 import { browserHistory } from 'react-router';
-import { AUTH_USER,AUTH_ERROR,UNAUTH_USER } from  './types';
+import { AUTH_USER,AUTH_ERROR,UNAUTH_USER,ADD_CONTACT,RECEIVE_CONTACTS } from  './types';
 import axios from 'axios';
+
+const ROOT_URL = 'http://localhost:3000';
 
 function receiveContacts(json) {
   return {
@@ -21,40 +22,25 @@ function receiveContact(json) {
 
 export function fetchContacts(contacts) {
   return function (dispatch) {
-    return fetch('/contacts')
+    axios.get(`${ROOT_URL}/contacts`, {
+      headers : { authorization : localStorage.getItem('token')}
+    })
       .then(response => {
-        response.json()
-          .then(json =>{
-            dispatch(receiveContacts(json))
-          })
-        })
+        dispatch(receiveContacts(response.data))
+      })
   }
 }
-
-export const ADD_CONTACT = 'ADD_CONTACT'
 
 export function addContact(contact) {
-  let data = JSON.stringify(contact)
-  console.log(data)
   return function(dispatch) {
-    return fetch('/contacts', {
-        method: 'POST',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json',
-        },
-        body: data
-      })
-      .then(response => {
-        response.json()
-          .then(json => {
-            dispatch(receiveContact(json))
-          })
-      })
+    axios.post(`${ROOT_URL}/contacts`, contact, {
+      headers : { authorization : localStorage.getItem('token')}
+    })
+    .then(response => {
+      dispatch(receiveContact(response));
+    })
   }
 }
-
-const ROOT_URL = 'http://localhost:3000';
 
 export function signinUser({ email, password }) {
   return function(dispatch) {
