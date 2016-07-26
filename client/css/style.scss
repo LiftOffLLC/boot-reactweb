@@ -1,0 +1,26 @@
+@import "variables.scss";
+
+form {
+  margin-bottom: 0;
+}
+
+.landing-msg {
+  background: $light_grey;
+  width: 100%;
+  margin: auto;
+  padding: 100px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 300;
+  color: darken($light_grey, 50%);
+}
+
+.form-wrapper {
+  background: lighten($light-grey,3%);
+  padding: 30px;
+  border-radius: 4px;
+}
+
+.form-footer {
+  text-align: right;
+}

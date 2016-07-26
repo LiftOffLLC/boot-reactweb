@@ -21,25 +21,29 @@ class Signup extends Component {
   render () {
     const { handleSubmit, fields : {email, password, passwordConfirm}} = this.props;
     return (
-      <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
-        <fieldset className="form-group">
-          <label>Email : </label>
-          <input className="form-control" {...email} />
-          { email.touched && email.error && <div className="error">{email.error}</div> }
-        </fieldset>
-        <fieldset className="form-group">
-          <label>Password : </label>
-          <input className="form-control" type="password" {...password} />
-          { password.touched && password.error && <div className="error">{password.error}</div> }
-        </fieldset>
-        <fieldset className="form-group">
-          <label>Confirm Password : </label>
-          <input className="form-control" type="password" {...passwordConfirm} />
-          { passwordConfirm.touched && passwordConfirm.error && <div className="error">{passwordConfirm.error}</div> }
-        </fieldset>
-        {this.renderError()}
-        <button action="submit" className="btn btn-primary">Sign Up</button>
+      <div className="form-wrapper col-md-6 col-md-offset-3">
+        <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
+          <fieldset className="form-group">
+            <label>Email : </label>
+            <input className="form-control" {...email} />
+            { email.touched && email.error && <div className="error">{email.error}</div> }
+          </fieldset>
+          <fieldset className="form-group">
+            <label>Password : </label>
+            <input className="form-control" type="password" {...password} />
+            { password.touched && password.error && <div className="error">{password.error}</div> }
+          </fieldset>
+          <fieldset className="form-group">
+            <label>Confirm Password : </label>
+            <input className="form-control" type="password" {...passwordConfirm} />
+            { passwordConfirm.touched && passwordConfirm.error && <div className="error">{passwordConfirm.error}</div> }
+          </fieldset>
+          {this.renderError()}
+          <div className="form-footer">
+            <button action="submit" className="btn btn-primary">Sign Up</button>
+          </div>
       </form>
+      </div>
     );
   }
 }

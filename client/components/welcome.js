@@ -1,3 +1,3 @@
 import React from 'react';
 
-export default () => <div>Welcome to sample React-Redux Component</div>;
+export default () => <div className="landing-msg">Welcome to sample React-Redux Component</div>;
