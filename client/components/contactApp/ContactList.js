@@ -1,13 +1,13 @@
-import React, { PropTypes } from 'react'
-import { connect } from 'react-redux'
-import { fetchContacts } from '../actions'
+import React, { PropTypes } from 'react';
+import { connect } from 'react-redux';
+import { fetchContacts } from '../../actions/contactApp';
 
-import Contact from './Contact'
-import AddContact from './AddContact'
+import Contact from './Contact';
+import AddContact from './AddContact';
 
 class ContactList extends React.Component{
   componentWillMount(){
-    this.props.fetchContacts()
+    this.props.fetchContacts();
   }
 
   render(){
@@ -31,7 +31,7 @@ class ContactList extends React.Component{
 const mapStateToProps = (state) => {
   return {
     contacts: state.contacts
-  }
+  };
 }
 
 ContactList = connect(
@@ -40,4 +40,4 @@ ContactList = connect(
 )(ContactList);
 
 
-export default ContactList
+export default ContactList;

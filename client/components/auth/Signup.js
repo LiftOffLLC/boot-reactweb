@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import * as actions from '../../actions';
+import * as actions from '../../actions/auth';
 import { reduxForm } from 'redux-form';
 
 class Signup extends Component {
@@ -14,7 +14,7 @@ class Signup extends Component {
         <div className="alert alert-danger">
           <strong>Oops!! </strong> {this.props.errorMessage}
         </div>
-      )
+      );
     }
   }
 
@@ -40,7 +40,7 @@ class Signup extends Component {
         {this.renderError()}
         <button action="submit" className="btn btn-primary">Sign Up</button>
       </form>
-    )
+    );
   }
 }
 

@@ -9,7 +9,7 @@ import {Router, Route, IndexRoute, browserHistory } from 'react-router';
 import Signin from './components/auth/Signin';
 import Signout from './components/auth/Signout';
 import Signup from './components/auth/Signup';
-import ContactList from './components/ContactList';
+import ContactList from './components/contactApp/ContactList';
 import requireAuth from './components/auth/require_auth';
 import Welcome from './components/welcome';
 import { AUTH_USER } from './actions/types';
