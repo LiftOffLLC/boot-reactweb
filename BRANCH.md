@@ -1,4 +1,4 @@
-**react-redux-node-jwt**
+**react-node-jwt**
 
 Suitable for : Projects with mobile as well as web apps (or only web apps)
 
