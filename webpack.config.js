@@ -13,17 +13,14 @@ module.exports = {
   output: {
     path: './build', // This is where images AND js will go
     publicPath: '/',
-    filename: 'bundle.[name].[chunkhash].js'
+    filename: 'bundle.[name].[hash].js'
   },
   module: {
     loaders: [
       {
         test: /\.js$/,
         exclude: /(node_modules|bower_components)/,
-        loader: 'babel-loader',
-        query: {
-          presets: ['es2015', 'stage-0', 'react']
-        }
+        loaders: ['react-hot', 'babel-loader'],
       },
       { test: /\.scss$/, loader: 'style!css!sass' },
       { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192' } // inline base64 for <=8k images, direct URLs for the rest
