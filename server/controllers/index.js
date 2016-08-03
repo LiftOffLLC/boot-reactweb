@@ -10,8 +10,8 @@ module.exports = function(opts) {
     },
     addContact: function(req, res) {
       models.Contact.create(req.body, function(err, doc){
-        if(err) res.status(400).json({err: 'Could not save'})
-        res.json({data: doc})
+        if(err) res.status(400).json({err: 'Could not save'});
+        res.json({data: doc});
       })
     }
   }

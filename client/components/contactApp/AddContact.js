@@ -6,8 +6,8 @@ import { addContact } from '../../actions/contactApp';
 class AddContact extends React.Component{
   addContact(e){
     e.preventDefault();
-    this.props.addContact({name: this.refs.contact.value});
     this.refs.contact.value = '';
+    this.props.addContact({name: this.refs.contact.value});
   }
   render() {
     return (
@@ -30,7 +30,7 @@ class AddContact extends React.Component{
 
 const mapStateToProps = (state) => {
   return {contact: null};
-}
+};
 
 AddContact = connect(
   mapStateToProps,

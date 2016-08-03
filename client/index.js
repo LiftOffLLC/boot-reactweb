@@ -4,7 +4,7 @@ import { render } from 'react-dom';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import myApp from './reducers';
-import App from './components/App';
+import App from './components/app';
 import {Router, Route, IndexRoute, browserHistory } from 'react-router';
 import Signin from './components/auth/Signin';
 import Signout from './components/auth/Signout';

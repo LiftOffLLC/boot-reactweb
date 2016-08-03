@@ -11,10 +11,10 @@ function receiveContacts(json) {
   }
 }
 
-function receiveContact(json) {
+function addNewContact(json) {
   return {
     type: ADD_CONTACT,
-    contacts: json.data,
+    contact: json.data,
     receivedAt: Date.now()
   }
 }
@@ -32,14 +32,13 @@ export function addContact(contact) {
   return function(dispatch) {
     axios.post('/contacts', contact)
       .then(response => {
-        dispatch(receiveContact(response));
+        dispatch(addNewContact(response));
       })
   }
 }
 
 // Add a request interceptor
 axios.interceptors.request.use(function (config) {
-  console.log(config);
   // Add ROOT_URL to the request if needed
   // not needed right now because api on the same server, hence commenting
   //config.baseUrl = ROOT_URL;
