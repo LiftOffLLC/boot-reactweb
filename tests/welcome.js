@@ -5,7 +5,7 @@ export default {
     
     homePage
       .navigate()
-
+      
     homePage.expect.element('@welcomeMessage').to.be.visible;
 
     client.end();
