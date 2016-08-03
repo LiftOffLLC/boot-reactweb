@@ -29,7 +29,6 @@ class ContactList extends React.Component{
 }
 
 const mapStateToProps = (state) => {
-  console.log("statein mapstatetoprops",state)
   return {
     contacts: state.contacts.get("contacts").toJS()
   };
