@@ -5,15 +5,15 @@
 
   <testsuite name="welcome"
     errors="1" failures="0" hostname="" id="" package="welcome" skipped="0"
-    tests="1" time="0.01600" timestamp="Wed, 03 Aug 2016 09:57:10 GMT">
+    tests="1" time="0.01400" timestamp="Wed, 03 Aug 2016 11:07:13 GMT">
   
-    <testcase name="User is displayed Welcome page" time="0.01600" assertions="0">
+    <testcase name="User is displayed Welcome page" time="0.01400" assertions="0">
     </testcase>
       <system-err>
           Error while running [Welcome / User is displayed Welcome page]:
 
-  TypeError: Cannot read property &#39;element&#39; of undefined
-    at Object.UserIsDisplayedWelcomePage [as User is displayed Welcome page] (welcome.js:8:5)
+  TypeError: homePage.navigate is not a function
+    at Object.UserIsDisplayedWelcomePage [as User is displayed Welcome page] (welcome.js:7:8)
     at Module.call (/usr/local/lib/node_modules/nightwatch/lib/runner/module.js:62:34)
     at /usr/local/lib/node_modules/nightwatch/lib/runner/testcase.js:70:29
     at _fulfilled (/usr/local/lib/node_modules/nightwatch/node_modules/q/q.js:834:54)
