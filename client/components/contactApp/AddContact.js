@@ -11,7 +11,7 @@ class AddContact extends React.Component{
   }
   render() {
     return (
-      <div className="panel panel-default">
+      <div className="panel panel-default js-add-contact">
         <div className="panel-heading">
           <h3 className="panel-title">Add a contact</h3>
         </div>

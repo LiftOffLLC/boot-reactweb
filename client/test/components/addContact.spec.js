@@ -1,4 +1,4 @@
-import { renderComponent , expect } from '../testHelper';
+import { renderComponent, expect } from '../testHelper';
 import AddContact from '../../components/contactApp/AddContact';
 
 describe('AddContact Component', () => {

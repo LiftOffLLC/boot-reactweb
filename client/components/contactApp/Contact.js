@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 
 const Contact = (contact) => (
-  <li>
+  <li className="js-contact">
     {contact.name}
   </li>
 );

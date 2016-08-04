@@ -6,19 +6,28 @@ import jsdom from 'jsdom';
 import chai, { expect } from 'chai';
 import chaiJquery from 'chai-jquery';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import reducers from '../reducers';
+import thunkMiddleware from 'redux-thunk';
 
 global.document = jsdom.jsdom('<!doctype html><html><body></body></html>');
 global.window = global.document.defaultView;
 global.navigator = global.window.navigator;
 const $ = _$(window);
 
+
 chaiJquery(chai, chai.util, $);
 
 function renderComponent(ComponentClass, props = {}, state = {}) {
+
+  let store = createStore(reducers, state, applyMiddleware(
+    thunkMiddleware
+  ));
+
+  // let store = createStore(reducers, state);
+
   const componentInstance =  TestUtils.renderIntoDocument(
-    <Provider store={createStore(reducers, state)}>
+    <Provider store={store}>
       <ComponentClass {...props} />
     </Provider>
   );

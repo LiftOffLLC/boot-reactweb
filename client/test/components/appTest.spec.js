@@ -1,4 +1,4 @@
-import { renderComponent , expect } from '../testHelper';
+import { renderComponent, expect } from '../testHelper';
 import App from '../../components/app';
 
 describe('App Component' , () => {
