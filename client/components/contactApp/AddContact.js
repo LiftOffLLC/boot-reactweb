@@ -6,8 +6,8 @@ import { addContact } from '../../actions/contactApp';
 class AddContact extends React.Component{
   addContact(e){
     e.preventDefault();
-    this.refs.contact.value = '';
     this.props.addContact({name: this.refs.contact.value});
+    this.refs.contact.value = '';
   }
   render() {
     return (

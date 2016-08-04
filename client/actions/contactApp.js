@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const ROOT_URL = 'http://localhost:3000';
 
-function receiveContacts(json) {
+export function receiveContacts(json) {
   return {
     type: RECEIVE_CONTACTS,
     contacts: json.data,
@@ -11,7 +11,7 @@ function receiveContacts(json) {
   }
 }
 
-function addNewContact(json) {
+export function addNewContact(json) {
   return {
     type: ADD_CONTACT,
     contact: json.data,

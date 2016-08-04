@@ -26,4 +26,9 @@ describe('Contact List', () => {
     expect(component.find('.js-contact').length).to.equal(2);
   });
 
+  it('should show the new contacts', () => {
+    expect(component.find('.js-contact')).to.contain('abc');
+    expect(component.find('.js-contact')).to.contain('def');
+  });
+
 });

@@ -15,7 +15,7 @@ const contacts = (state = initialState, action) => {
       // const updatedState = state.set('contacts', updatedContacts);
       // console.log(originalContacts.toJS(), updatedContacts.toJS(), updatedState.toJS(), state.toJS());
       // return updatedState
-      return state.contacts.push(fromJS(action.contact.data));
+      return { ...state, contacts : state.contacts.push(fromJS(action.contact.data)) };
     default:
       return state;
   }
