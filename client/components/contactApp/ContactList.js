@@ -30,9 +30,9 @@ class ContactList extends React.Component{
 
 const mapStateToProps = (state) => {
   return {
-    contacts: state.contacts.get("contacts").toJS()
+    contacts: state.contacts.contacts.toJS()
   };
-}
+};
 
 ContactList = connect(
   mapStateToProps,
