@@ -1,1 +1,1 @@
-exports.Contact = require('./Contact');
+exports.Contact = require('./contact');
