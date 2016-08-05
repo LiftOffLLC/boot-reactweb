@@ -6,7 +6,7 @@ import AddContact from './AddContact';
 
 import {SortableContainer, SortableElement, arrayMove} from 'react-sortable-hoc';
 
-const SortableItem = SortableElement(({value}) => <li>{value.name}</li>);
+const SortableItem = SortableElement(({value}) => <li className="js-contact">{value.name}</li>);
 
 const SortableList = SortableContainer(({items}) => {
   return (
