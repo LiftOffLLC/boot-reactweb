@@ -41,7 +41,7 @@ form {
   padding: 15px;
   border: 1px solid #eee;
   border-radius: 0 0 4px 4px;
-  max-height: 400px;
+  min-height: 100px;
   overflow: auto; }
   .contact-list > li {
     background: #eee;

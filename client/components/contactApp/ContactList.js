@@ -4,9 +4,30 @@ import * as actions from '../../actions/contactApp';
 
 import AddContact from './AddContact';
 
-import {SortableContainer, SortableElement, arrayMove} from 'react-sortable-hoc';
+import {SortableContainer, SortableElement, SortableHandle} from 'react-sortable-hoc';
 
-const SortableItem = SortableElement(({value}) => <li className="js-contact">{value.name}</li>);
+let removeContact = function (contact) {
+  console.log("removeContact",contact);
+};
+
+const SortableItem = SortableElement(({value}) => {
+
+  const DragHandle = SortableHandle(() => {
+      return <span>::::::                             </span>
+  });
+
+  const removeContactProxy = function() {
+    removeContact(value);
+  };
+
+  return (
+    <li className="js-contact clearfix">
+      <DragHandle />
+      {value.name}
+      <button className="pull-right" onClick={removeContactProxy}>&times;</button>
+    </li>
+  );
+});
 
 const SortableList = SortableContainer(({items}) => {
   return (
@@ -25,13 +46,14 @@ class ContactList extends React.Component{
   onSortEnd = ({oldIndex, newIndex}) => {
     console.log(oldIndex," ",newIndex)
   };
+
   render(){
     return (
       <div>
         <AddContact />
         <h3 className="contact-list-heading"> Contacts</h3>
         <ul>
-          <SortableList items={this.props.contacts} onSortEnd={this.onSortEnd}/>
+          <SortableList items={this.props.contacts} onSortEnd={this.onSortEnd} lockAxis="y" useDragHandle={true} />
         </ul>
       </div>
     )
