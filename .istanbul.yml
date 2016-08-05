@@ -1,0 +1,7 @@
+instrumentation:
+    root: .
+    extensions:
+        - .js
+    default-excludes: true
+    excludes: ['**/server/**','**.config.js','**.conf.js','**/dist/**']
+    include-all-sources: true
