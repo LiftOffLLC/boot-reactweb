@@ -3,7 +3,7 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 // var nodeExternals = require('webpack-node-externals');
 
 module.exports = {
-  entry: "./client//entry.js",
+  entry: "./client/entry.js",
   devtool: 'cheap-module-source-map',
   output: {
     path: path.join(__dirname, 'dist'),
