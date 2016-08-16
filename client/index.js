@@ -13,11 +13,10 @@ import ContactList from './components/contactApp/ContactList';
 import requireAuth from './components/auth/RequireAuth';
 import Welcome from './components/welcome';
 import { AUTH_USER } from './actions/types';
+import routes from './routes';
+import configureStore from './store';
 
-let store = createStore(myApp, applyMiddleware(
-  thunkMiddleware
-));
-
+const store = configureStore({})
 const token = localStorage.getItem('token');
 //If we have a token, consider the user to be signed in
 if(token) {
@@ -27,15 +26,7 @@ if(token) {
 
 render(
   <Provider store={store}>
-    <Router history={browserHistory}>
-      <Route path="/" component={App}>
-        <IndexRoute component={Welcome} />
-        <Route path="signin" component={Signin}></Route>
-        <Route path="signup" component={Signup}></Route>
-        <Route path="signout" component={Signout}></Route>
-        <Route path="contact-list" component={requireAuth(ContactList)}></Route>
-      </Route>
-    </Router>
-  </Provider>,
+    <Router history={browserHistory} routes={routes}/>
+    </Provider>,
   document.getElementById('root')
 );
