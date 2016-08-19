@@ -5,6 +5,10 @@ module.exports = function(express, app) {
   var bodyParser = require('body-parser');
   app.use(require('morgan')('dev'));
   app.use(bodyParser.json({strict: false}));
-  app.use(express.static('public'));
+  app.use(bodyParser.urlencoded({
+    extended: true,
+    limit: '50mb'
+  }))
   app.use(express.static('dist'));
+
 }

@@ -22,7 +22,7 @@ class Signin extends Component {
 
     return (
       <div className="form-wrapper">
-        <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
+        <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))} method="POST" encType='application/x-www-form-urlencoded'>
           <fieldset className="form-group">
             <label>Email : </label>
             <input className="form-control" {...email} />

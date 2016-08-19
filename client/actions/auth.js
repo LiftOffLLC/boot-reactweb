@@ -11,6 +11,7 @@ export function signinUser({ email, password }) {
       .then(response => {
         // If request is good...
         // - Update state to indicate user is authenticated
+        console.log("yahoo")
         dispatch({ type: AUTH_USER });
         // - Save the JWT token
         localStorage.setItem('token', response.data.token);

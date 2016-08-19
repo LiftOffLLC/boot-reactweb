@@ -44,6 +44,11 @@ exports.signup = function (req, res, next) {
 };
 
 exports.signin = function (req, res, next) {
-  const token = tokenForUser(req.user);
-  res.send({token});
+
+  if(req.xhr){
+    const token = tokenForUser(req.user);
+    res.send({token});
+  }else{
+    res.redirect('/contact-list')
+  }
 };
