@@ -17,3 +17,4 @@ module.exports = (
     <Route path="contact-list" component={requireAuth(ContactList)}></Route>
   </Route>
 )
+
