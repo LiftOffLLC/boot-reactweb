@@ -2,8 +2,8 @@ import React from 'react';
 import { renderToString } from 'react-dom/server'
 import { match, RouterContext } from 'react-router'
 import { Provider } from 'react-redux';
-import routes from '../client/routes'
-import  configureStore from '../client/store';
+import routes from '../../client/routes'
+import  configureStore from '../../client/store';
 
 export default function(req,res,next){
 
@@ -13,7 +13,7 @@ export default function(req,res,next){
     } else if (redirectLocation) {
       res.redirect(302, redirectLocation.pathname + redirectLocation.search)
     } else if (renderProps) {
-
+        console.log("-------------------", renderProps);
         const store = configureStore();
         const initialView = renderToString(
           <Provider store={store}>

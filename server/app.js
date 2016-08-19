@@ -1,23 +1,24 @@
 var express = require('express');
 var app = express();
-var errorLib = require('./errors/error_handler');
-var path = require('path');
-var render = require('./render');
+var errorLib = require('./middleware/error_handler');
+var render = require('./middleware/render');
+var bodyParser = require('body-parser');
+var logger = require('morgan');
+var http =  require('http');
 
-require('./config')(express, app);
-app.use('/', require('./routes')(express, {}));
+app.use(logger('dev'));
+app.use(bodyParser.json({strict: false}));
+app.use(bodyParser.urlencoded({
+  extended: true,
+  limit: '50mb'
+}));
+app.use(express.static('dist'));
+
+app.use(render);
+
 app.use(errorLib.errorHandler);
-
-// app.get('*', function (req, res, next) {
-//   return res.sendFile(path.resolve(__dirname + '/../public/index.html'))
-// })
-
-app.use(render)
 
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!');
 });
 
-// app.get('*', function (req, res, next) {
-//   return res.sendFile(path.resolve(__dirname + '/../public/index.html'))
-// }
