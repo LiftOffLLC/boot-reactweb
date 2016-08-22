@@ -13,7 +13,6 @@ export default function(req,res,next){
     } else if (redirectLocation) {
       res.redirect(302, redirectLocation.pathname + redirectLocation.search)
     } else if (renderProps) {
-        console.log("-------------------", renderProps);
         const store = configureStore();
         const initialView = renderToString(
           <Provider store={store}>
