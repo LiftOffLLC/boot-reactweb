@@ -2,6 +2,7 @@ var path = require('path');
 const webpack = require("webpack");
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const DashboardPlugin = require('webpack-dashboard/plugin');
 // var nodeExternals = require('webpack-node-externals');
 
 module.exports = {
@@ -35,6 +36,7 @@ module.exports = {
     }),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor'
-    })
+    }),
+    new DashboardPlugin()
   ]
 };
