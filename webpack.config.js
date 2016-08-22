@@ -1,14 +1,19 @@
-var path = require('path')
+var path = require('path');
+const webpack = require("webpack");
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 // var nodeExternals = require('webpack-node-externals');
 
 module.exports = {
-  entry: "./client/entry.js",
+  entry: {
+    app: './client/entry.js',
+    vendor: ['babel-polyfill', 'react', 'react-dom', 'react-redux', 'react-router', 'redux', 'redux-thunk', 'redux-form', 'immutable']
+  },
   devtool: 'cheap-module-source-map',
   output: {
-    path: path.join(__dirname, 'dist'),
-    filename: "bundle.js",
-    publicPath: '/dist/'
+    path: '/dist',
+    filename: 'bundle.[name].[hash].js',
+    publicPath: '/'
   },
   module: {
     loaders : [
@@ -24,6 +29,12 @@ module.exports = {
     ]
   },
   plugins: [
-    new ExtractTextPlugin("styles.css")
+    new ExtractTextPlugin("styles.css"),
+    new HtmlWebpackPlugin({
+      template: './public/index.html'
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor'
+    })
   ]
 };

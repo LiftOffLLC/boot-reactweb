@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server",
     "dev": "nodemon server",
-    "dev-server": "webpack-dev-server --progress --colors --historyApiFallback true --inline --hot --port 3000 --content-base public/",
+    "dev-server": "webpack-dev-server --progress --colors --historyApiFallback true --inline --hot --port 3000 --content-base dist/",
     "webpack": "webpack --watch",
     "e2e-setup": "node_modules/selenium-standalone/bin/selenium-standalone install",
     "test": "mocha --compilers js:babel-core/register --require ./client/test/testHelper.js --recursive ./client/test",
@@ -32,6 +32,7 @@
     "style-loader": "^0.13.1",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1",
+    "webpack-isomorphic-tools": "^2.5.7",
     "webpack-node-externals": "^1.2.0"
   },
   "dependencies": {
