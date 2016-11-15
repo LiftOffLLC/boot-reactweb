@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <title></title>
+    <% if (typeof files !== 'undefined') { %>
+    <% files.forEach(function (file) { %>
+    <link rel="preload" href="<%- file %>" as="script">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.2.3/css/bulma.min.css" rel="stylesheet" type="text/css">
+    <% }); %>
+    <% } %>
+  </head>
+  <body>
+    <div id="root"><% if (typeof markup !== 'undefined') { %><%- markup %><% } %></div>
+    <script>
+      window.__INITIAL_STATE__ = <% if (typeof initialState !== 'undefined' && initialState) { %><%- JSON.stringify(initialState) %><% } else { %>null<% } %>;
+      window.__INITIAL_MODULES__ = <% if (typeof modules !== 'undefined' && modules) { %><%- JSON.stringify(modules) %><% } else { %>null<% } %>;
+    </script>
+    <% if (typeof files !== 'undefined') { %>
+    <% files.forEach(function (file) { %>
+    <script src="<%- file %>" async defer></script>
+    <% }); %>
+    <% } %>
+  </body>
+</html>

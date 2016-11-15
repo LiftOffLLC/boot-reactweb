@@ -1,0 +1,3 @@
+rootProject.name = 'blogWebAndMobile'
+
+include ':app'
